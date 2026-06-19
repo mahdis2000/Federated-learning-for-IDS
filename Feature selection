@@ -1,0 +1,8 @@
+feature_cols = [
+    'Destination Port','Flow Duration','Total Fwd Packets',
+    'Total Backward Packets','Total Length of Fwd Packets',
+    'Total Length of Bwd Packets','Fwd Packet Length Max',
+    'Fwd Packet Length Min','Fwd Packet Length Mean',
+    'Fwd Packet Length Std'
+]
+df = df.dropna(subset=feature_cols + [target_col])
