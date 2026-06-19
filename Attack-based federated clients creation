@@ -1,0 +1,18 @@
+clients_data = {}
+
+unique_labels = np.unique(y_encoded)
+
+for label_id in unique_labels:
+
+    attack_name = le.inverse_transform([label_id])[0]
+
+    idx = (y_encoded == label_id)
+
+    X_client = X_scaled[idx]
+    y_client = y_encoded[idx]
+
+    clients_data[attack_name] = (X_client, y_client)
+
+    print(f"{attack_name} → samples: {X_client.shape[0]}")
+
+print("\nTotal Clients Created:", len(clients_data))
